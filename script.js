@@ -147,12 +147,20 @@ function playgame() {
         }
         playround()
     }
+    // to show the final mresults of the game
+    // declares a variable to know if the ties is singular or plural
+    var tie;
     if(humanscore>computerscore){
-        console.log(names + " wins the game with ratio " + names + " to COMPUTER of "+ humanscore +" to "+computerscore+" with "+ties+" TIES");
+        console.log(names + " wins the game with ratio " + names + " to COMPUTER of "+ humanscore +" to "+computerscore+" with "+ties+tie);
     }else if(humanscore==computerscore){
-        console.log("the game ends up in a tie between " + names + " and COMPUTER with "+ties+" TIES");
+        console.log("the game ends up in a tie between " + names + " and COMPUTER with "+ties+tie);
     }else{
-        console.log("COMPUTER wins the game with ratio of COMPUTER to " + names +" of " +computerscore +" to "+ humanscore+" with "+ties+"TIES");
+        console.log("COMPUTER wins the game with ratio of COMPUTER to " + names +" of " +computerscore +" to "+ humanscore+" with "+ties+ tie);
+    }
+    if (ties<=1) {
+        tie=" TIE"
+    } else {
+        tie=" TIES"
     }
 }
 playgame()
